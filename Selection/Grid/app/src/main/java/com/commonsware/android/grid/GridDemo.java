@@ -36,12 +36,12 @@ public class GridDemo extends Activity
   public void onCreate(Bundle state) {
     super.onCreate(state);
     setContentView(R.layout.main);
-    selection=(TextView)findViewById(R.id.selection);
+    selection= findViewById(R.id.selection);
     
-    GridView g=(GridView) findViewById(R.id.grid);
-    g.setAdapter(new ArrayAdapter<String>(this,
-                        R.layout.cell,
-                        items));
+    GridView g= findViewById(R.id.grid);
+    g.setAdapter(new ArrayAdapter<>(this,
+            R.layout.cell,
+            items));
     g.setOnItemClickListener(this);
   }
   
