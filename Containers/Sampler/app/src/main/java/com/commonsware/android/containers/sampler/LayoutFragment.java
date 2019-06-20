@@ -10,25 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class LayoutFragment extends Fragment {
-    private static final String ARG_LAYOUT="layout";
+    private static final String ARG_LAYOUT = "layout";
 
     static LayoutFragment newInstance(int layoutId) {
-        LayoutFragment result=new LayoutFragment();
-        Bundle args=new Bundle();
-
+        LayoutFragment frag = new LayoutFragment();
+        Bundle args = new Bundle();
         args.putInt(ARG_LAYOUT, layoutId);
-        result.setArguments(args);
-
-        return(result);
+        frag.setArguments(args);
+        return frag;
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater,
+    public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
         assert getArguments() != null;
         return inflater.inflate(
-                getArguments().getInt(ARG_LAYOUT),
+                getArguments().getInt(ARG_LAYOUT), // inflate a layout by ID
                 container,
                 false);
     }
@@ -36,14 +34,13 @@ public class LayoutFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view,
                               @Nullable Bundle savedInstanceState) {
-        View compassButton=view.findViewById(R.id.compassButton);
-        if (compassButton!=null) {
+        View compassButton = view.findViewById(R.id.compassButton);
+        if (compassButton != null) {
             compassButton.setOnClickListener(v -> {
-                View group=view.findViewById(R.id.directions);
-                if (group.getVisibility()==View.VISIBLE) {
+                View group = view.findViewById(R.id.directions);
+                if (group.getVisibility() == View.VISIBLE) {
                     group.setVisibility(View.GONE);
-                }
-                else {
+                } else {
                     group.setVisibility(View.VISIBLE);
                 }
             });

@@ -8,30 +8,30 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 class SampleAdapter extends FragmentPagerAdapter {
-        private int[] layouts;
-        private String[] titles;
+        private int[] layoutIDs;
+        private String[] layoutTitles;
         Activity activity;
 
         SampleAdapter(Activity activity, FragmentManager mgr) {
             super(mgr);
             this.activity = activity;
-            layouts = getLayoutsArray();
-            titles = activity.getResources().getStringArray(R.array.titles);
+            layoutIDs = getLayoutsArray();
+            layoutTitles = activity.getResources().getStringArray(R.array.titles);
         }
 
         @Override
         public int getCount() {
-            return (titles.length);
+            return (layoutTitles.length);
         }
 
         @Override
-        public Fragment getItem(int position) {
-            return LayoutFragment.newInstance(layouts[position]);
+        public Fragment getItem(int index) {
+            return LayoutFragment.newInstance(layoutIDs[index]);
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return (titles[position]);
+            return (layoutTitles[position]);
         }
 
         int[] getLayoutsArray() {
