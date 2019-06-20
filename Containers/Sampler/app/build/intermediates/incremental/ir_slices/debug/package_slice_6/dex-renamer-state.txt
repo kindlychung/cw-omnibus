@@ -1,4 +1,0 @@
-#Thu Jun 20 00:09:53 CEST 2019
-base.0=/home/kaiyin/AndroidStudioProjects/cw-omnibus/Containers/Sampler/app/build/intermediates/transforms/dexMerger/debug/6
-path.0=classes.dex
-renamed.0=classes.dex

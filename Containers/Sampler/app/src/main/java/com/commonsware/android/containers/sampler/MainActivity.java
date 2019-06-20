@@ -29,54 +29,54 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class MainActivity extends FragmentActivity {
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.main);
-    ViewPager pager=findViewById(R.id.pager);
-    Resources resources = getResources();
-    pager.setAdapter(new SampleAdapter(getSupportFragmentManager()));
-  }
-
-  private class SampleAdapter extends FragmentPagerAdapter {
-    private int[] layouts;
-    private String[] titles;
-
-    SampleAdapter(FragmentManager mgr) {
-      super(mgr);
-      layouts=getLayoutsArray();
-      titles=getResources().getStringArray(R.array.titles);
-    }
-
     @Override
-    public int getCount() {
-      return(titles.length);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        ViewPager pager = findViewById(R.id.pager);
+        Resources resources = getResources();
+        pager.setAdapter(new SampleAdapter(getSupportFragmentManager()));
     }
 
-    @Override
-    public Fragment getItem(int position) {
-      return LayoutFragment.newInstance(layouts[position]);
+    private class SampleAdapter extends FragmentPagerAdapter {
+        private int[] layouts;
+        private String[] titles;
+
+        SampleAdapter(FragmentManager mgr) {
+            super(mgr);
+            layouts = getLayoutsArray();
+            titles = getResources().getStringArray(R.array.titles);
+        }
+
+        @Override
+        public int getCount() {
+            return (titles.length);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return LayoutFragment.newInstance(layouts[position]);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return (titles[position]);
+        }
+
+        int[] getLayoutsArray() {
+            TypedArray typedArray =
+                    getResources().obtainTypedArray(R.array.layouts);
+            int n = typedArray.length();
+            int[] result = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                result[i] = typedArray.getResourceId(i, -1);
+            }
+            typedArray.recycle();
+
+            return (result);
+        }
     }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-      return(titles[position]);
-    }
-
-    int[] getLayoutsArray() {
-      TypedArray typedArray=
-              getResources().obtainTypedArray(R.array.layouts);
-      int n = typedArray.length();
-      int[] result=new int[n];
-
-      for (int i=0;i<n;i++) {
-        result[i]=typedArray.getResourceId(i, -1);
-      }
-      typedArray.recycle();
-
-      return(result);
-    }
-  }
 
 
 }
