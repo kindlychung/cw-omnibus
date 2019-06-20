@@ -23,7 +23,7 @@
 
         <Button
             android:id="@+id/cancel"
-            android:layout_column="2"
+            android:layout_column="1"
             android:text="@string/cancel" />
 
         <Button

@@ -30,13 +30,13 @@
     app:layout_constraintCircleRadius="@dimen/radius" />
 
   <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/east"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    app:layout_constraintCircle="@id/compass"
-    app:layout_constraintCircleAngle="90"
-    app:layout_constraintCircleRadius="@dimen/radius" />
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/east"
+      android:textAppearance="?android:attr/textAppearanceLarge"
+      app:layout_constraintCircle="@id/compass"
+      app:layout_constraintCircleAngle="90"
+      app:layout_constraintCircleRadius="@dimen/radius" />
 
   <TextView
     android:layout_width="wrap_content"

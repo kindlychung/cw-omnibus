@@ -14,6 +14,7 @@
 
 package com.commonsware.android.containers.sampler;
 
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -32,9 +33,8 @@ public class MainActivity extends FragmentActivity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
-
     ViewPager pager=findViewById(R.id.pager);
-
+    Resources resources = getResources();
     pager.setAdapter(new SampleAdapter(getSupportFragmentManager()));
   }
 
@@ -44,7 +44,7 @@ public class MainActivity extends FragmentActivity {
 
     SampleAdapter(FragmentManager mgr) {
       super(mgr);
-      layouts=getLayoutsArray(R.array.layouts);
+      layouts=getLayoutsArray();
       titles=getResources().getStringArray(R.array.titles);
     }
 
@@ -55,7 +55,7 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     public Fragment getItem(int position) {
-      return(LayoutFragment.newInstance(layouts[position]));
+      return LayoutFragment.newInstance(layouts[position]);
     }
 
     @Override
@@ -63,57 +63,20 @@ public class MainActivity extends FragmentActivity {
       return(titles[position]);
     }
 
-    int[] getLayoutsArray(int arrayResourceId) {
+    int[] getLayoutsArray() {
       TypedArray typedArray=
-        getResources().obtainTypedArray(arrayResourceId);
-      int[] result=new int[typedArray.length()];
+              getResources().obtainTypedArray(R.array.layouts);
+      int n = typedArray.length();
+      int[] result=new int[n];
 
-      for (int i=0;i<typedArray.length();i++) {
+      for (int i=0;i<n;i++) {
         result[i]=typedArray.getResourceId(i, -1);
       }
+      typedArray.recycle();
 
       return(result);
     }
   }
 
-  public static class LayoutFragment extends Fragment {
-    private static final String ARG_LAYOUT="layout";
 
-    static LayoutFragment newInstance(int layoutId) {
-      LayoutFragment result=new LayoutFragment();
-      Bundle args=new Bundle();
-
-      args.putInt(ARG_LAYOUT, layoutId);
-      result.setArguments(args);
-
-      return(result);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater,
-                             ViewGroup container,
-                             Bundle savedInstanceState) {
-      return(inflater.inflate(getArguments().getInt(ARG_LAYOUT),
-        container, false));
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view,
-                              @Nullable Bundle savedInstanceState) {
-      View compassButton=view.findViewById(R.id.compassButton);
-
-      if (compassButton!=null) {
-        compassButton.setOnClickListener(v -> {
-          View group=view.findViewById(R.id.directions);
-
-          if (group.getVisibility()==View.VISIBLE) {
-            group.setVisibility(View.GONE);
-          }
-          else {
-            group.setVisibility(View.VISIBLE);
-          }
-        });
-      }
-    }
-  }
 }
