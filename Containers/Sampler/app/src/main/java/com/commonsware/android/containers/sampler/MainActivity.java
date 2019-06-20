@@ -17,16 +17,11 @@ package com.commonsware.android.containers.sampler;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 public class MainActivity extends FragmentActivity {
     @Override
@@ -34,49 +29,6 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         ViewPager pager = findViewById(R.id.pager);
-        Resources resources = getResources();
-        pager.setAdapter(new SampleAdapter(getSupportFragmentManager()));
+        pager.setAdapter(new SampleAdapter(this, getSupportFragmentManager()));
     }
-
-    private class SampleAdapter extends FragmentPagerAdapter {
-        private int[] layouts;
-        private String[] titles;
-
-        SampleAdapter(FragmentManager mgr) {
-            super(mgr);
-            layouts = getLayoutsArray();
-            titles = getResources().getStringArray(R.array.titles);
-        }
-
-        @Override
-        public int getCount() {
-            return (titles.length);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return LayoutFragment.newInstance(layouts[position]);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return (titles[position]);
-        }
-
-        int[] getLayoutsArray() {
-            TypedArray typedArray =
-                    getResources().obtainTypedArray(R.array.layouts);
-            int n = typedArray.length();
-            int[] result = new int[n];
-
-            for (int i = 0; i < n; i++) {
-                result[i] = typedArray.getResourceId(i, -1);
-            }
-            typedArray.recycle();
-
-            return (result);
-        }
-    }
-
-
 }
