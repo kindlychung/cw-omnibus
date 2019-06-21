@@ -14,7 +14,6 @@ apply plugin: 'com.commonsware.android.gradle.plugin'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.commonsware.android.gradle.plugin"
         minSdkVersion 15

@@ -3,9 +3,6 @@
 	android:versionCode="1"
 	android:versionName="1.0">
 
-	<uses-sdk
-		android:minSdkVersion="12"
-		android:targetSdkVersion="15"/>
 	<supports-screens android:xlargeScreens="true" android:largeScreens="true" android:smallScreens="true" android:normalScreens="true"/>
 
 	<application

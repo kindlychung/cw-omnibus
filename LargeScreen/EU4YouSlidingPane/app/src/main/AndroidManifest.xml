@@ -11,9 +11,6 @@
 		android:normalScreens="true"
 		android:smallScreens="false"/>
 
-	<uses-sdk
-		android:minSdkVersion="14"
-		android:targetSdkVersion="14"/>
 
 	<application
 		android:allowBackup="false"

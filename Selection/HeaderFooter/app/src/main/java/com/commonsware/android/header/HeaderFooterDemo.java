@@ -27,14 +27,6 @@ import android.widget.TextView;
 
 public class HeaderFooterDemo extends ListActivity {
   private static String[] items={"lorem", "ipsum", "dolor",
-                                  "sit", "amet", "consectetuer",
-                                  "adipiscing", "elit", "morbi",
-                                  "vel", "ligula", "vitae",
-                                  "arcu", "aliquet", "mollis",
-                                  "etiam", "vel", "erat",
-                                  "placerat", "ante",
-                                  "porttitor", "sodales",
-                                  "pellentesque", "augue",
                                   "purus"};
   private long startTime=SystemClock.uptimeMillis();
   private boolean areWeDeadYet=false;
@@ -67,9 +59,9 @@ public class HeaderFooterDemo extends ListActivity {
         
         Collections.shuffle(list);
         
-        setListAdapter(new ArrayAdapter<String>(HeaderFooterDemo.this,
-                            android.R.layout.simple_list_item_1,
-                            list));
+        setListAdapter(new ArrayAdapter<>(HeaderFooterDemo.this,
+                android.R.layout.simple_list_item_1,
+                list));
       }
     });
     
@@ -87,7 +79,8 @@ public class HeaderFooterDemo extends ListActivity {
   private void updateFooter(final TextView txt) {
     long runtime=(SystemClock.uptimeMillis()-startTime)/1000;
     
-    txt.setText(String.valueOf(runtime)+" seconds since activity launched");
+    txt.setText(String.format("%d s since launch", runtime));
+    txt.setTextSize(35);
     
     if (!areWeDeadYet) {
       getListView().postDelayed(new Runnable() {

@@ -9,9 +9,6 @@
 		android:normalScreens="true"
 		android:smallScreens="false"/>
 
-	<uses-sdk
-		android:minSdkVersion="7"
-		android:targetSdkVersion="11"/>
 
 	<application
 		android:icon="@drawable/ic_launcher"
