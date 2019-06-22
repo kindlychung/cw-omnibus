@@ -7,11 +7,11 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "com.commonsware.android.dragdrop.drop"
-        minSdkVersion 24
-        targetSdkVersion 24
+        minSdkVersion 26
+        targetSdkVersion 28
     }
 }

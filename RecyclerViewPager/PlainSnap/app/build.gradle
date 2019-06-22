@@ -5,11 +5,11 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 28
 
 	  defaultConfig {
-        minSdkVersion 15
-		    targetSdkVersion 25
+        minSdkVersion 26
+		    targetSdkVersion 28
         applicationId 'com.commonsware.android.rvp.snap'
 	  }
 }

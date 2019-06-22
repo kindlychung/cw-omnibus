@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 21
+  compileSdkVersion 28
 
   defaultConfig {
-    minSdkVersion 14
-    targetSdkVersion 17
+    minSdkVersion 26
+    targetSdkVersion 28
     applicationId "com.commonsware.android.prefs.custsub"
   }
 }

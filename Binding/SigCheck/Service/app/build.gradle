@@ -12,9 +12,9 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 28
 
 	defaultConfig {
-		targetSdkVersion 17
+		targetSdkVersion 28
 	}
 }

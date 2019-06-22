@@ -4,11 +4,11 @@ def WARES='"https://wares.commonsware.com/excerpt-7p0.pdf"'
 def SELFSIGNED='"https://scrap.commonsware.com:3001/excerpt-7p0.pdf"'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 27
+        minSdkVersion 26
+        targetSdkVersion 28
     }
 
     flavorDimensions "default"

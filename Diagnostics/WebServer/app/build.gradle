@@ -8,13 +8,13 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 28
 
     defaultConfig {
         versionCode 1
         versionName "1.0"
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion 26
+        targetSdkVersion 28
     }
 
     aaptOptions {

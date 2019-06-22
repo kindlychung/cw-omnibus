@@ -25,10 +25,10 @@ import android.widget.TextView;
 
 public class MainActivity extends RecyclerViewActivity {
   private static final String[] items={"lorem", "ipsum", "dolor",
-          "sit", "amet",
-          "consectetuer", "adipiscing", "elit", "morbi", "vel",
-          "ligula", "vitae", "arcu", "aliquet", "mollis",
-          "etiam", "vel", "erat", "placerat", "ante",
+//          "sit", "amet",
+//          "consectetuer", "adipiscing", "elit", "morbi", "vel",
+//          "ligula", "vitae", "arcu", "aliquet", "mollis",
+//          "etiam", "vel", "erat", "placerat", "ante",
           "porttitor", "sodales", "pellentesque", "augue", "purus"};
   
   @Override

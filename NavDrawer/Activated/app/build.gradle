@@ -5,5 +5,5 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 19
+    compileSdkVersion 28
 }

@@ -5,10 +5,10 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 19
+    compileSdkVersion 28
 
 	defaultConfig {
-		targetSdkVersion 17
+		targetSdkVersion 28
     applicationId "com.commonsware.android.eventbus.greenrobot3"
 	}
 }

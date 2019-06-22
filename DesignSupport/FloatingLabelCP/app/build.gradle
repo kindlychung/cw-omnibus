@@ -11,11 +11,11 @@ dependencies {
 }
 
 android {
-  compileSdkVersion 26
+  compileSdkVersion 28
 
   defaultConfig {
-    minSdkVersion 21
-    targetSdkVersion 26
+    minSdkVersion 26
+    targetSdkVersion 28
     applicationId 'com.commonsware.android.design.til'
   }
 }

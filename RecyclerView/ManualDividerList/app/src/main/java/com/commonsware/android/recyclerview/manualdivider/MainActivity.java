@@ -16,6 +16,7 @@ package com.commonsware.android.recyclerview.manualdivider;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -38,8 +39,8 @@ public class MainActivity extends RecyclerViewActivity {
 
     setLayoutManager(new LinearLayoutManager(this));
 
-    Drawable divider=getResources().getDrawable(R.drawable.item_divider);
-
+    Drawable divider = ContextCompat.getDrawable(this, R.drawable.item_divider);
+    assert divider != null;
     getRecyclerView().addItemDecoration(new HorizontalDividerItemDecoration(divider));
     setAdapter(new IconicAdapter());
   }

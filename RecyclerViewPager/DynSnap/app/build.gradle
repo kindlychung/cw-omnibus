@@ -12,11 +12,11 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
 	  defaultConfig {
-        minSdkVersion 21
-		    targetSdkVersion 27
+        minSdkVersion 26
+		    targetSdkVersion 28
         applicationId 'com.commonsware.cwac.rvp.dynsnap'
 	  }
 }

@@ -10,11 +10,11 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion 26
+        targetSdkVersion 28
         testApplicationId "com.commonsware.android.espresso.idle"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
