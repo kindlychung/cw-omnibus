@@ -28,7 +28,6 @@ public class ExtrasDemoActivity extends Activity {
   
   public void showOther(View v) {
     Intent other=new Intent(this, OtherActivity.class);
-    
     other.putExtra(OtherActivity.EXTRA_MESSAGE, getString(R.string.other));
     startActivity(other);
   }
